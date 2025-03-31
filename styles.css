@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.logo {
+    animation: float 3s ease-in-out infinite;
+    width: 150px;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #00b4d8, #90e0ef);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.dynamic-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #90e0ef;
+    margin-top: 1rem;
+    min-height: 2.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 3rem 0;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    min-width: 150px;
+    transition: transform 0.3s ease;
+}
+
+.countdown-item:hover {
+    transform: translateY(-10px);
+}
+
+.number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #90e0ef;
+}
+
+.label {
+    font-size: 1.1rem;
+    color: #caf0f8;
+}
+
+.subscribe-form {
+    margin: 3rem 0;
+}
+
+input[type="email"] {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 30px;
+    width: 400px;
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+input[type="email"]:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #00b4d8, #90e0ef);
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-left: 1rem;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.social-links {
+    margin-top: 3rem;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #90e0ef;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .countdown-item {
+        min-width: 120px;
+        padding: 1rem;
+    }
+
+    .number {
+        font-size: 2rem;
+    }
+
+    input[type="email"] {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    button {
+        width: 100%;
+        margin-left: 0;
+    }
+}
