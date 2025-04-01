@@ -28,7 +28,7 @@
     <meta property="og:description"
         content="Join Gujarat's premier student tech community - Code, Collaborate & Innovate at Marwadi University's official open source hub. Workshops, Hackathons & Real Projects.">
     <meta property="og:image"
-        content="https://github.com/osdc-mu/osdc/blob/e62c0f6261bee2242b5e2076fdda76d175f1f272/Assets/1.png?raw=true">
+        content="https://github.com/OSDC-Official/osdc-official.github.io/blob/main/Assets/1.png?raw=true">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="OSDC Community - Marwadi University Developers Collaborating">
@@ -43,7 +43,7 @@
       "@type": "TechCommunity",
       "name": "Open Source Development Community",
       "url": "https://osdc-mu.github.io/osdc/",
-      "logo": "https://github.com/osdc-mu/osdc/blob/e62c0f6261bee2242b5e2076fdda76d175f1f272/Assets/1.png?raw=true",
+      "logo": "https://github.com/OSDC-Official/osdc-official.github.io/blob/main/Assets/1.png?raw=true",
       "description": "Student-led open source initiative at Marwadi University offering technical workshops, hackathons, and collaborative coding projects.",
       "address": {
         "@type": "PostalAddress",
@@ -90,9 +90,18 @@
             </div>
         </div>
         <div class="waitlist">
-            <button class="waitlist-btn" onclick="window.open('https://forms.gle/vaeuEkC4Kmi5N6WT8')">Join Waitlist
-                ⚡</button>
+            <button class="waitlist-btn" id="waitlistButton">Join Waitlist ⚡</button>
         </div>
+
+        <!-- Popup Modal -->
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal-content">
+                <button class="close-btn" id="closeButton"></button>
+                <iframe aria-label='Event Registration' frameborder="0" style="height:500px;width:99%;border:none;"
+                    src='https://forms.gle/vaeuEkC4Kmi5N6WT8' title="Waitlist Form" id="formIframe"></iframe>
+            </div>
+        </div>
+
         <div class="social-links">
             <a href="#"><i class="fab fa-github"></i></a>
             <a href="#"><i class="fab fa-discord"></i></a>
@@ -100,7 +109,6 @@
             <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 

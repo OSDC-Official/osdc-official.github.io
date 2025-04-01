@@ -94,12 +94,38 @@ const x = setInterval(() => {
     }
 }, 1000);
 
-// Email Validation
-document.querySelector('button').addEventListener('click', function () {
-    const email = document.querySelector('input').value;
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-        alert('Thank you for subscribing! We\'ll notify you when we launch.');
-    } else {
-        alert('Please enter a valid email address');
+(function () {
+    const waitlistButton = document.getElementById('waitlistButton');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const formIframe = document.getElementById('formIframe');
+    const closeButton = document.getElementById('closeButton');
+
+    // Open modal
+    waitlistButton.addEventListener('click', () => {
+        modalOverlay.classList.add('active');
+    });
+
+    // Close modal handlers
+    function closeModal() {
+        modalOverlay.classList.remove('active');
     }
-});
+
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+    });
+
+    closeButton.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+            closeModal();
+        }
+    });
+
+    // Reset iframe on close
+    modalOverlay.addEventListener('transitionend', () => {
+        if (!modalOverlay.classList.contains('active')) {
+            formIframe.src = '';
+        }
+    });
+})();
